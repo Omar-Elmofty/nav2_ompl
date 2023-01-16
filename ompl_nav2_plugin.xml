@@ -1,0 +1,5 @@
+<library path="ompl_planner">
+	<class name="ompl_nav2/OMPLPlanner" type="ompl_nav2::OMPLPlanner" base_class_type="nav2_core::GlobalPlanner">
+	  <description></description>
+	</class>
+</library>
