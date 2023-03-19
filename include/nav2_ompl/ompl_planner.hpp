@@ -29,7 +29,7 @@ SOFTWARE.
 #include "nav2_core/global_planner.hpp"
 #include "nav2_util/lifecycle_node.hpp"
 
-namespace ompl_nav2 {
+namespace nav2_ompl {
 
 namespace ob = ompl::base;
 namespace og = ompl::geometric;
@@ -124,4 +124,4 @@ class OMPLPlanner : public nav2_core::GlobalPlanner {
   double y_bound_{7.5};
 };
 
-}  // namespace ompl_nav2
+}  // namespace nav2_ompl

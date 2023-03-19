@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>ompl_nav2</name>
+  <name>nav2_ompl</name>
   <version>0.0.0</version>
   <description>Ros2 wrapper for OMPL</description>
   <maintainer email="omar.elmofty31@gmail.com">oelmofty</maintainer>
@@ -20,6 +20,6 @@
 
   <export>
     <build_type>ament_cmake</build_type>
-    <nav2_core plugin="${prefix}/ompl_nav2_plugin.xml" />
+    <nav2_core plugin="${prefix}/nav2_ompl_plugin.xml" />
   </export>
 </package>

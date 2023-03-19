@@ -1,4 +1,4 @@
-# ompl_nav2
+# nav2_ompl
 
 ROS2 package for demonstrating the usage of OMPL with ROS2 [Nav2 stack](https://navigation.ros.org/) and [Turtlebot4](https://turtlebot.github.io/turtlebot4-user-manual/software/turtlebot4_packages.html). The package implements a global planner plugin that uses OMPL's [BITStar planner](https://ompl.kavrakilab.org/classompl_1_1geometric_1_1BITstar.html) and [DubinsStateSpace](https://ompl.kavrakilab.org/classompl_1_1base_1_1DubinsStateSpace.html). Here is an example of the output:
 
@@ -16,9 +16,9 @@ Before using this package you should install the following:
 1. Create new workspace, clone packages needed:
 ```
 # Create workspace
-mkdir -p ~/ompl_nav2_ws/src
-cd ompl_nav2_ws/src/
-git clone https://github.com/Omar-Elmofty/ompl_nav2.git
+mkdir -p ~/nav2_ompl_ws/src
+cd nav2_ompl_ws/src/
+git clone https://github.com/Omar-Elmofty/nav2_ompl.git
 git clone https://github.com/turtlebot/turtlebot4.git
 # Need to checkout the correct ros distro branch for turtlebot4
 cd turtlebot4/
@@ -33,7 +33,7 @@ planner_server:
     use_sim_time: True
     planner_plugins: ["GridBased"]
     GridBased:
-      plugin: "ompl_nav2/OMPLPlanner" # Using our new plugin here
+      plugin: "nav2_ompl/OMPLPlanner" # Using our new plugin here
 
 ```
 Note that the above is kinda of hack, technically we should be creating a new planner plugin name other than the `GridBased` one, but since the `GridBased` name is the default name throughout the turtlebot4 stack, so it's easier to stick with it and change the `plugin` variable as shown above.
@@ -41,7 +41,7 @@ Note that the above is kinda of hack, technically we should be creating a new pl
 3. Build the workspace
 ```
 # Build workspace
-cd ~/ompl_nav2_ws
+cd ~/nav2_ompl_ws
 colcon build
 ```
 
@@ -51,7 +51,7 @@ colcon build
 ros2 launch turtlebot4_ignition_bringup ignition.launch.py nav2:=false slam:=off localization:=false rviz:=true
 
 # Open a new terminal, and run
-cd ~/ompl_nav2_ws
+cd ~/nav2_ompl_ws
 source install/setup.bash # Here we source the workspace to apply the changes we made
 ros2 launch turtlebot4_navigation nav_bringup.launch.py map:=your_map.yaml localization:=true slam:=off
 ```

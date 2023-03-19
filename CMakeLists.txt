@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(ompl_nav2)
+project(nav2_ompl)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -41,7 +41,7 @@ ament_target_dependencies(${library_name}
 # prevent pluginlib from using boost
 target_compile_definitions(${library_name} PUBLIC "PLUGINLIB__DISABLE_BOOST_FUNCTIONS")
 
-pluginlib_export_plugin_description_file(nav2_core ompl_nav2_plugin.xml)
+pluginlib_export_plugin_description_file(nav2_core nav2_ompl_plugin.xml)
 
 install(TARGETS ${library_name}
   ARCHIVE DESTINATION lib
